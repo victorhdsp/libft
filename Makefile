@@ -15,7 +15,7 @@ bonus: $(NAME) $(BONUS_FILES)
 	$(AR) $(AR_FLAGS) $(NAME) $^
 
 .o: .c
-	$(CC) -Wall -Wextra -Werror -c $< -o $@
+	$(CC) -Wall -Wextra -Werror -g -c $< -o $@
 
 clean:
 	rm -f $(FILES) $(BONUS_FILES);
