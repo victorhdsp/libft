@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(FILES)
 	$(AR) $(AR_FLAGS) $@ $^
 
-bonus: $(BONUS_FILES)
+bonus: $(NAME) $(BONUS_FILES)
 	$(AR) $(AR_FLAGS) $(NAME) $^
 
 .o: .c
