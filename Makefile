@@ -14,7 +14,7 @@ $(NAME): $(FILES)
 bonus: $(BONUS_FILES)
 	$(AR) $(AR_FLAGS) $(NAME) $^
 
-%.o: %.c
+.o: .c
 	$(CC) -Wall -Wextra -Werror -c $< -o $@
 
 clean:
