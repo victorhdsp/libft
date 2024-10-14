@@ -6,13 +6,14 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:47:31 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/14 15:12:17 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/14 17:42:43 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_count_word(char const *s, char c)
+static int	ft_count_word(char const *s, char c)
 {
 	size_t	index;
 	int		sep_in_word;
@@ -21,7 +22,7 @@ int	ft_count_word(char const *s, char c)
 	index = 0;
 	sep_in_word = 1;
 	count = 0;
-	while (s[index])
+	while (s && s[index])
 	{
 		if (s[index] == c)
 			sep_in_word++;
@@ -35,12 +36,12 @@ int	ft_count_word(char const *s, char c)
 	return (count);
 }
 
-char	**ft_clean(char **result)
+static char	**ft_clean(char **result)
 {
 	int	index;
 
 	index = 0;
-	while (result[index])
+	while (result && result[index])
 	{
 		free(result[index]);
 		index++;
@@ -50,7 +51,8 @@ char	**ft_clean(char **result)
 	return (ft_calloc(1, sizeof(char *)));
 }
 
-int	ft_create_text(char const *s, char const *s2, char **result, size_t index)
+static int	ft_create_text(char const *s, char const *s2, char **result,
+		size_t index)
 {
 	char	*tmp_text;
 
@@ -78,7 +80,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	len = ft_count_word(s, c);
 	result = ft_calloc(len + 1, sizeof(char *));
-	while (*s && index < len && result != NULL)
+	while (s && *s && index < len && result != NULL)
 	{
 		s2 = ft_strchr(s, (int)c);
 		if (!s2)

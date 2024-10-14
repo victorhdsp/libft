@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 18:42:23 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/12 12:36:00 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:43:29 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	index = 0;
 	result = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	while (s[index])
+	while (result && s && s[index] && f)
 	{
 		result[index] = f(index, s[index]);
 		index++;

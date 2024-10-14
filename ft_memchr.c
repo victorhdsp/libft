@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:28:18 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/13 14:23:02 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/14 14:58:35 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (*(unsigned char *)(s + i) == (unsigned char)c)
-			return ((void *)&s[i]);
+			return ((void *)s + i);
 		i++;
 	}
 	return (NULL);

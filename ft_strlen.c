@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:41:57 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/13 16:13:09 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:26:52 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	int	index;
 
 	index = 0;
-	while (s[index])
+	while (s && s[index])
 		index++;
 	return (index);
 }
