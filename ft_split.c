@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:47:31 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/14 17:42:43 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:08:10 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_count_word(char const *s, char c)
 	int		count;
 
 	index = 0;
-	sep_in_word = 1;
+	sep_in_word = 0;
 	count = 0;
 	while (s && s[index])
 	{
@@ -57,7 +57,7 @@ static int	ft_create_text(char const *s, char const *s2, char **result,
 	char	*tmp_text;
 
 	tmp_text = ft_substr(s, 0, s2 - s);
-	if (*tmp_text)
+	if (tmp_text && *tmp_text)
 		result[index] = tmp_text;
 	else
 		free(tmp_text);
