@@ -6,7 +6,7 @@
 /*   By: vide-sou <vide-sou@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:47:31 by vide-sou          #+#    #+#             */
-/*   Updated: 2024/10/13 15:29:10 by vide-sou         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:12:17 by vide-sou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	**ft_clean(char **result)
 	}
 	free(result);
 	result = NULL;
-	return (NULL);
+	return (ft_calloc(1, sizeof(char *)));
 }
 
 int	ft_create_text(char const *s, char const *s2, char **result, size_t index)
@@ -74,6 +74,8 @@ char	**ft_split(char const *s, char c)
 	size_t		len;
 
 	index = 0;
+	if (!s)
+		return (NULL);
 	len = ft_count_word(s, c);
 	result = ft_calloc(len + 1, sizeof(char *));
 	while (*s && index < len && result != NULL)
