@@ -33,7 +33,7 @@ static int	ft_count_word(char const *s, char c)
 		}
 		index++;
 	}
-	return (count);
+	return (count + 1);
 }
 
 static char	**ft_clean(char **result)
